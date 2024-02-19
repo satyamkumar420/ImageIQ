@@ -91,6 +91,9 @@ body {
   .gradient-text {
     @apply bg-purple-gradient bg-cover bg-clip-text text-transparent;
   }
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500 inline-block text-transparent bg-clip-text;
+  }
 
   /* ===== ALIGNMENTS */
   .flex-center {
@@ -173,7 +176,7 @@ body {
   }
 
   .input-field {
-    @apply rounded-[16px] border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-dark-600 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent !important;
+    @apply rounded-[16px] border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-white/90 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent bg-[#131a2a] !important;
   }
 
   .search-field {
@@ -181,11 +184,11 @@ body {
   }
 
   .submit-button {
-    @apply bg-purple-gradient bg-cover rounded-full py-4 px-6 p-16-semibold h-[50px] w-full md:h-[54px];
+    @apply bg-gradient-to-r from-blue-700 to-orange-600 hover:from-orange-600 hover:to-blue-700 bg-cover rounded-full py-4 px-6 p-16-semibold h-[50px] w-full  md:h-[54px];
   }
 
   .select-field {
-    @apply w-full border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 rounded-[16px] h-[50px] md:h-[54px] text-dark-600 p-16-semibold disabled:opacity-100 placeholder:text-dark-400/50 px-4 py-3 focus:ring-offset-0 focus-visible:ring-transparent focus:ring-transparent focus-visible:ring-0 focus-visible:outline-none !important;
+    @apply bg-[#131a2a] text-white/90 w-full border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 rounded-[16px] h-[50px] md:h-[54px] p-16-semibold disabled:opacity-100 placeholder:text-dark-400/50 px-4 py-3 focus:ring-offset-0 focus-visible:ring-transparent focus:ring-transparent focus-visible:ring-0 focus-visible:outline-none !important;
   }
 
   .select-trigger {
@@ -193,7 +196,7 @@ body {
   }
 
   .select-item {
-    @apply py-3 cursor-pointer hover:bg-purple-100;
+    @apply bg-[#131a2a] text-blue-100 py-3 cursor-pointer hover:bg-blue-600/20;
   }
 
   .IconButton {
@@ -356,7 +359,8 @@ body {
   }
 }
 
-/* =====  CLERK OVERRIDES */
+/* <-------- CLERK CSS MODIFY -------> */
+
 .cl-userButtonBox {
   display: flex;
   flex-flow: row-reverse;
@@ -369,7 +373,6 @@ body {
   color: #bfc9da;
 }
 
-/* <-------- CLERK CSS MODIFY -------> */
 .cl-internal-h9qt1g {
   display: none;
 }
@@ -379,7 +382,28 @@ body {
 }
 
 /* Clerk SignIn */
+.cl-footerActionText,
+.cl-internal-1ui5z3q {
+  font-size: 16px;
+  color: #bccbe7;
+}
+.cl-footerActionLink,
+.cl-internal-15amzqo {
+  font-size: 16px;
+  font-weight: 600;
+}
 
+/* USERNAME Clerk */
+.cl-formFieldLabel,
+.cl-formFieldLabel__identifier,
+.cl-required,
+.cl-internal-ycivbk {
+  font-size: 17px;
+  font-weight: 600;
+  color: #bccbe7;
+}
+
+/* Clerk Card Theme */
 .cl-card,
 .cl-card,
 .cl-signIn-start,
@@ -394,6 +418,25 @@ body {
 .cl-internal-skmkd5 {
   color: aliceblue;
   background: #111622;
+}
+
+.cl-headerSubtitle,
+.cl-internal-n84jlv {
+  color: #bccbe7;
+  font-size: 17px;
+}
+
+.cl-socialButtonsBlockButtonText,
+.cl-socialButtonsBlockButtonText__github,
+.cl-internal-7pl8hj {
+  color: #dbe5f8;
+  font-size: 15px;
+}
+
+.cl-dividerText,
+.cl-internal-g70oge {
+  color: #bccbe7;
+  font-size: 15px;
 }
 
 input:-webkit-autofill,
