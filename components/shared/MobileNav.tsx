@@ -42,7 +42,7 @@ const MobileNav = () => {
             </SheetTrigger>
             <SheetContent
               side={"left"}
-              className="sheet-content text-white bg-[#050c1e] border-none"
+              className="sheet-content sm:w-72 text-white bg-[#050c1e] border-none"
             >
               <>
                 <Image
