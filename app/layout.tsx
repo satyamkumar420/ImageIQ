@@ -15,9 +15,6 @@ export const metadata: Metadata = {
   title: "ImageIQ",
   description:
     "AI-Powered by ImageIQ, a powerful image processing tool. With ImageIQ, you can create and edit images in just a few clicks. Get started today!",
-  icons: {
-    icon: "logo.png",
-  },
 };
 
 export default function RootLayout({
@@ -32,6 +29,9 @@ export default function RootLayout({
       }}
     >
       <html lang="en" suppressHydrationWarning>
+        <head>
+          <link rel="icon" href="/assets/images/logo.png" />
+        </head>
         <body className={cn("font-IBMPlex antialiased", Font.variable)}>
           {children}
         </body>
