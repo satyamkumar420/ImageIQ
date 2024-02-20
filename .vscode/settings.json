@@ -11,5 +11,6 @@
     "**/.next": true,
     ".next": true
   },
-  "explorerExclude.backup": {}
+  "explorerExclude.backup": {},
+  "cSpell.words": ["CLOUDINARY", "imageiq"]
 }

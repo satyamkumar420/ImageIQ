@@ -149,7 +149,7 @@ const TransformationForm = ({
 
     setImage((prevState: any) => ({
       ...prevState,
-      aspectRation: imageSize.aspectRatio,
+      aspectRatio: imageSize.aspectRatio,
       width: imageSize.width,
       height: imageSize.height,
     }));
@@ -176,7 +176,6 @@ const TransformationForm = ({
     }, 1000);
   };
 
-  // TODO: Update creditFee to Something else
   const onTransformHandler = async () => {
     setIsTransforming(true);
 
@@ -326,6 +325,7 @@ const TransformationForm = ({
           >
             {isTransforming ? "Transforming..." : "Apply Transformation"}
           </Button>
+          {/* TODO: if image not transformed then disabled button */}
           <Button
             type="submit"
             className="submit-button capitalize"
