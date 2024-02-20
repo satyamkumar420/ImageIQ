@@ -8,6 +8,7 @@ import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
   aspectRatioOptions,
+  creditFee,
   defaultValues,
   transformationTypes,
 } from "@/constants";
@@ -19,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import MediaUploader from "./MediaUploader";
 import TransformedImage from "./TransformedImage";
@@ -27,9 +28,13 @@ import { updateCredits } from "@/lib/actions/user.actions";
 import { getCldImageUrl } from "next-cloudinary";
 import { addImage, updateImage } from "@/lib/actions/image.actions";
 import { useRouter } from "next/navigation";
+import { InsufficientCreditsModal } from "./InsufficientCreditsModal";
 
 export const formSchema = z.object({
-  title: z.string(),
+  // TODO: fix this title is required and show message
+  title: z.string().refine((value) => value.trim() !== "", {
+    message: "Title is required",
+  }),
   aspectRatio: z.string().optional(),
   color: z.string().optional(),
   prompt: z.string().optional(),
@@ -182,13 +187,20 @@ const TransformationForm = ({
     setNewTransformation(null);
 
     startTransition(async () => {
-      await updateCredits(userId, -1);
+      await updateCredits(userId, creditFee);
     });
   };
+
+  useEffect(() => {
+    if (image && (type === "restore" || type === "removeBackground")) {
+      setNewTransformation(transformationType.config);
+    }
+  }, [image, transformationType.config, type]);
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        {creditBalance < Math.abs(creditFee) && <InsufficientCreditsModal />}
         <CustomField
           control={form.control}
           name="title"
@@ -226,6 +238,7 @@ const TransformationForm = ({
             )}
           />
         )}
+
         {/*  Add ReColor and Remove */}
         {(type === "remove" || type === "recolor") && (
           <div className="prompt-field">
@@ -251,31 +264,30 @@ const TransformationForm = ({
                 />
               )}
             />
-          </div>
-        )}
-
-        {/* Add Recolor */}
-        {type === "recolor" && (
-          <CustomField
-            control={form.control}
-            name="color"
-            formLabel="Color"
-            className="w-full"
-            render={({ field }) => (
-              <Input
-                value={field.value}
-                className="input-field"
-                onChange={(e) =>
-                  onInputChangeHandler(
-                    "color",
-                    e.target.value,
-                    "recolor",
-                    field.onChange
-                  )
-                }
+            {/* Add Recolor */}
+            {type === "recolor" && (
+              <CustomField
+                control={form.control}
+                name="color"
+                formLabel="Color"
+                className="w-full"
+                render={({ field }) => (
+                  <Input
+                    value={field.value}
+                    className="input-field"
+                    onChange={(e) =>
+                      onInputChangeHandler(
+                        "color",
+                        e.target.value,
+                        "recolor",
+                        field.onChange
+                      )
+                    }
+                  />
+                )}
               />
             )}
-          />
+          </div>
         )}
 
         {/* Media Uploader Field */}
@@ -304,9 +316,8 @@ const TransformationForm = ({
             transformationConfig={transformationConfig}
           />
         </div>
-
         {/* Buttons */}
-        <div className="flex flex-col gap-4">
+        <div className="prompt-field ">
           <Button
             type="button"
             className="submit-button capitalize"
