@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ImageIQ 🖼️
 
-## Getting Started
+Welcome to ImageIQ, your go-to AI project for image enhancement and manipulation! 🚀
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ImageIQ is an AI-powered project that brings cutting-edge image processing capabilities to your fingertips. Whether you need to restore, generate, or manipulate images, ImageIQ has got you covered.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Image Restore** 🔄: Revitalize old or damaged images to their former glory.
+- **Generative Fill** 🎨: Create stunning visuals by filling in missing or empty spaces with AI-generated content.
+- **Object Remove** 🚫: Say goodbye to unwanted objects in your images seamlessly.
+- **Object Recolor** 🌈: Customize the colors of specific objects in your images effortlessly.
+- **Background Remove** 📸: Instantly remove backgrounds from your images for a clean and professional look.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![ImageIQ Image](https://res.cloudinary.com/dnbxs63jo/image/upload/v1708509165/images/g7shthzovmqzgsfxfhbo.png)
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- **React**: For building responsive and interactive user interfaces.
+- **NextJs**: A React framework for server-side rendering and efficient development.
+- **MongoDB**: A NoSQL database for storing and managing image-related data.
+- **Stripe**: Handling secure online payments for premium features.
+- **Cloudinary**: Cloud-based image management for AI processing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Register and log in to access ImageIQ's features.
+2. Upload images to perform various tasks.
+3. Explore the intuitive interface to restore, generate, remove objects, recolor, and remove backgrounds.
+4. Upgrade to premium for additional benefits using Stripe integration.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Happy coding! 🚀✨
