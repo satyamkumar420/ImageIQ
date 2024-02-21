@@ -19,12 +19,12 @@ export const InsufficientCreditsModal = () => {
 
   return (
     <AlertDialog defaultOpen>
-      <AlertDialogContent>
+      <AlertDialogContent className="bg-[#131a2a] border-none">
         <AlertDialogHeader>
           <div className="flex-between">
             <p className="p-16-semibold text-dark-400">Insufficient Credits</p>
             <AlertDialogCancel
-              className="border-0 p-0 hover:bg-transparent"
+              className="border-0 p-0 bg-[#131a2a] hover:bg-[#131a2a]"
               onClick={() => router.push("/profile")}
             >
               <Image
@@ -44,24 +44,24 @@ export const InsufficientCreditsModal = () => {
             height={122}
           />
 
-          <AlertDialogTitle className="p-24-bold text-dark-600">
+          <AlertDialogTitle className="p-24-bold text-blue-600">
             Oops.... Looks like you&#39;ve run out of free credits!
           </AlertDialogTitle>
 
-          <AlertDialogDescription className="p-16-regular py-3">
+          <AlertDialogDescription className="p-16-regular py-3 text-slate-300">
             No worries, though - you can keep enjoying our services by grabbing
             more credits.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel
-            className="button w-full bg-[#131a2a] text-dark-400"
+            className="button w-full bg-[#131a2a] text-dark-400 border-2 border-dark-700 hover:bg-[#1c263d] hover:text-dark-400"
             onClick={() => router.push("/profile")}
           >
             No, Cancel
           </AlertDialogCancel>
           <AlertDialogAction
-            className="button w-full bg-purple-gradient  bg-cover"
+            className="button w-full bg-gradient  bg-cover"
             onClick={() => router.push("/credits")}
           >
             Yes, Proceed
