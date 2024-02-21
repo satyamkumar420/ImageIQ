@@ -32,7 +32,9 @@ export default function RootLayout({
         <head>
           <link rel="icon" href="/assets/images/logo.png" />
         </head>
-        <body className={cn("font-IBMPlex antialiased", Font.variable)}>
+        <body
+          className={cn("font-IBMPlex antialiased bg-[#0a101e]", Font.variable)}
+        >
           {children}
         </body>
       </html>
