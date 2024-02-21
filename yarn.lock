@@ -684,6 +684,11 @@
   resolved "https://registry.yarnpkg.com/@stablelib/base64/-/base64-1.0.1.tgz#bdfc1c6d3a62d7a3b7bbc65b6cce1bb4561641be"
   integrity sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ==
 
+"@stripe/stripe-js@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-3.0.4.tgz#265fb31d7d9425d1f81ca616caef6229cc225fa7"
+  integrity sha512-oz+s5MbU308C3iG36NjsBTa+0u00qLKuzixo/7HUAcmWPok7CDREOcGLUCho3wUEC+AWYu9156Us+eCO42HRAg==
+
 "@swc/helpers@0.5.2":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.2.tgz#85ea0c76450b61ad7d10a37050289eded783c27d"

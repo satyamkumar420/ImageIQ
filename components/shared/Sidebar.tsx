@@ -69,7 +69,6 @@ const Sidebar = () => {
                         alt={link.label}
                         width={24}
                         height={24}
-                        className={`${isActive && "brightness-200"}`}
                       />
                       {link.label}
                     </Link>

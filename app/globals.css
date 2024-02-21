@@ -92,9 +92,11 @@ body {
     @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500  bg-cover bg-clip-text text-transparent;
   }
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-500 inline-block text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-600 inline-block text-transparent bg-clip-text;
   }
-
+  .bg-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-orange-500 hover:from-orange-600 hover:to-blue-500;
+  }
   /* ===== ALIGNMENTS */
   .flex-center {
     @apply flex justify-center items-center;
@@ -230,11 +232,11 @@ body {
   }
 
   .credits-item {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-8 shadow-xl shadow-purple-200/20 lg:max-w-none;
+    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-[#131a2a] p-8 shadow-md shadow-blue-200/20 lg:max-w-none;
   }
 
   .credits-btn {
-    @apply w-full rounded-full bg-purple-100 bg-cover text-purple-500 hover:text-purple-500;
+    @apply w-full rounded-full;
   }
 
   /* Profile Page */
@@ -243,11 +245,11 @@ body {
   }
 
   .profile-balance {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
+    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-[#131a2a] p-5 shadow-md shadow-purple-200/10 md:px-6 md:py-8;
   }
 
   .profile-image-manipulation {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
+    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-[#131a2a] p-5 shadow-md shadow-purple-200/10 md:px-6 md:py-8;
   }
 
   /* Transformation Details */
@@ -273,7 +275,7 @@ body {
   }
 
   .collection-btn {
-    @apply button w-32 bg-purple-gradient bg-cover text-white;
+    @apply button w-32 bg-cover text-white;
   }
 
   .collection-card {
@@ -445,4 +447,30 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-transition-delay: 9999s;
   transition-delay: 9999s;
+}
+
+/* <-------- Scrollbar -------> */
+::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0d162b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #364161;
+}
+
+scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+scrollbar-thumb {
+  background-color: #888;
 }
