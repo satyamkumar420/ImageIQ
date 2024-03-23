@@ -1,4 +1,4 @@
-# ImageIQ 🖼️
+# AI ImageIQ 🖼️
 
 Welcome to ImageIQ, your go-to AI project for image enhancement and manipulation! 🚀
 
